@@ -84,3 +84,17 @@ def ContextualSBM(n, d, Lambda, p, mu, train_percent=0.025, val_percent=0.025):
     y = np.ones(n)
     y[int(n/2)+1:] = -1
     y = np.asarray(y, dtype=int)
+
+    # creating edge_index
+    edge_index = [[], []]
+    for i in range(n-1):
+        for j in range(i+1, n):
+            if y[i]*y[j] > 0:
+                Flip = np.random.binomial(1, c_in/n)
+            else:
+                Flip = np.random.binomial(1, c_out/n)
+            if Flip > 0.5:
+                edge_index[0].append(i)
+                edge_index[1].append(j)
+                edge_index[0].append(j)
+                edge_index[1].append(i)
