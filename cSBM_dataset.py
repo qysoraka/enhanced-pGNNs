@@ -66,3 +66,21 @@ def random_planetoid_splits(data, num_classes, percls_trn=20, val_lb=500, Flag=0
         rest_index = rest_index[torch.randperm(rest_index.size(0))]
 
         data.train_mask = index_to_mask(train_index, size=data.num_nodes)
+        data.val_mask = index_to_mask(val_index, size=data.num_nodes)
+        data.test_mask = index_to_mask(rest_index, size=data.num_nodes)
+    return data
+
+
+def ContextualSBM(n, d, Lambda, p, mu, train_percent=0.025, val_percent=0.025):
+    # n = 800 #number of nodes
+    # d = 5 # average degree
+    # Lambda = 1 # parameters
+    # p = 1000 # feature dim
+    # mu = 1 # mean of Gaussian
+    gamma = n/p
+
+    c_in = d + np.sqrt(d)*Lambda
+    c_out = d - np.sqrt(d)*Lambda
+    y = np.ones(n)
+    y[int(n/2)+1:] = -1
+    y = np.asarray(y, dtype=int)
