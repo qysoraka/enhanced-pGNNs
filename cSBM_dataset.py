@@ -114,3 +114,20 @@ def ContextualSBM(n, d, Lambda, p, mu, train_percent=0.025, val_percent=0.025):
     num_class = len(np.unique(y))
     val_lb = int(n * val_percent)
     percls_trn = int(round(train_percent * n / num_class))
+    data = random_planetoid_splits(data, num_class, percls_trn, val_lb)
+
+    # add parameters to attribute
+    data.Lambda = Lambda
+    data.mu = mu
+    data.n = n
+    data.p = p
+    data.d = d
+    data.train_percent = train_percent
+    data.val_percent = val_percent
+
+    return data
+
+
+def parameterized_Lambda_and_mu(theta, p, n, epsilon=0.1):
+    '''
+    based on claim 3 in the paper, 
