@@ -131,3 +131,19 @@ def ContextualSBM(n, d, Lambda, p, mu, train_percent=0.025, val_percent=0.025):
 def parameterized_Lambda_and_mu(theta, p, n, epsilon=0.1):
     '''
     based on claim 3 in the paper, 
+
+        lambda^2 + mu^2/gamma = 1 + epsilon.
+
+    1/gamma = p/n
+    longer axis: 1
+    shorter axis: 1/gamma.
+    =>
+        lambda = sqrt(1 + epsilon) * sin(theta * pi / 2)
+        mu = sqrt(gamma * (1 + epsilon)) * cos(theta * pi / 2)
+    '''
+    from math import pi
+    gamma = n / p
+    assert (theta >= -1) and (theta <= 1)
+    Lambda = np.sqrt(1 + epsilon) * np.sin(theta * pi / 2)
+    mu = np.sqrt(gamma * (1 + epsilon)) * np.cos(theta * pi / 2)
+    return Lambda, mu
