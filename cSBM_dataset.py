@@ -168,3 +168,17 @@ def save_data_to_pickle(data, p2root='../data/', file_name=None):
 
 
 class dataset_ContextualSBM(InMemoryDataset):
+    r"""Create synthetic dataset based on the contextual SBM from the paper:
+    https://arxiv.org/pdf/1807.09596.pdf
+
+    Use the similar class as InMemoryDataset, but not requiring the root folder.
+
+       See `here <https://pytorch-geometric.readthedocs.io/en/latest/notes/
+    create_dataset.html#creating-in-memory-datasets>`__ for the accompanying
+    tutorial.
+
+    Args:
+        root (string): Root directory where the dataset should be saved.
+        name (string): The name of the dataset if not specified use time stamp.
+
+        for {n, d, p, Lambda, mu}, with '_' as prefix: intial/feed in argument.
