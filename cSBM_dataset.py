@@ -182,3 +182,18 @@ class dataset_ContextualSBM(InMemoryDataset):
         name (string): The name of the dataset if not specified use time stamp.
 
         for {n, d, p, Lambda, mu}, with '_' as prefix: intial/feed in argument.
+        without '_' as prefix: loaded from data information
+
+        n: number nodes
+        d: avg degree of nodes
+        p: dimenstion of feature vector.
+
+        Lambda, mu: parameters balancing the mixture of information, 
+                    if not specified, use parameterized method to generate.
+
+        epsilon, theta: gap between boundary and chosen ellipsoid. theta is 
+                        angle of between the selected parameter and x-axis.
+                        choosen between [0, 1] => 0 = 0, 1 = pi/2
+
+        transform (callable, optional): A function/transform that takes in an
+            :obj:`torch_geometric.data.Data` object and returns a transformed
