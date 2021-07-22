@@ -226,3 +226,15 @@ class dataset_ContextualSBM(InMemoryDataset):
         self._p = p
 
         self._Lambda = Lambda
+        self._mu = mu
+        self._epsilon = epsilon
+        self._theta = theta
+
+        self._train_percent = train_percent
+        self._val_percent = val_percent
+
+        root = osp.join(root, self.name)
+        if not osp.isdir(root):
+            os.makedirs(root)
+        super(dataset_ContextualSBM, self).__init__(
+            root, transform, pre_transform)
