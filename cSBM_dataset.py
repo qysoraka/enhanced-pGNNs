@@ -197,3 +197,20 @@ class dataset_ContextualSBM(InMemoryDataset):
 
         transform (callable, optional): A function/transform that takes in an
             :obj:`torch_geometric.data.Data` object and returns a transformed
+            version. The data object will be transformed before every access.
+            (default: :obj:`None`)
+        pre_transform (callable, optional): A function/transform that takes in
+            an :obj:`torch_geometric.data.Data` object and returns a
+            transformed version. The data object will be transformed before
+            being saved to disk. (default: :obj:`None`)
+    """
+
+#     url = 'https://github.com/kimiyoung/planetoid/raw/master/data'
+
+    def __init__(self, root, name=None,
+                 n=800, d=5, p=100, Lambda=None, mu=None,
+                 epsilon=0.1, theta=0.5,
+                 train_percent=0.01, val_percent=0.01,
+                 transform=None, pre_transform=None):
+
+        now = datetime.now()
