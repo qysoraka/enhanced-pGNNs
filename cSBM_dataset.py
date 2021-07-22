@@ -214,3 +214,15 @@ class dataset_ContextualSBM(InMemoryDataset):
                  transform=None, pre_transform=None):
 
         now = datetime.now()
+        surfix = now.strftime('%b_%d_%Y-%H:%M')
+        if name is None:
+            # not specifing the dataset name, create one with time stamp.
+            self.name = '_'.join(['cSBM_data', surfix])
+        else:
+            self.name = name
+
+        self._n = n
+        self._d = d
+        self._p = p
+
+        self._Lambda = Lambda
