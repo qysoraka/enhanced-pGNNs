@@ -238,3 +238,29 @@ class dataset_ContextualSBM(InMemoryDataset):
             os.makedirs(root)
         super(dataset_ContextualSBM, self).__init__(
             root, transform, pre_transform)
+
+#         ipdb.set_trace()
+        self.data, self.slices = torch.load(self.processed_paths[0])
+        # overwrite the dataset attribute n, p, d, Lambda, mu
+        self.Lambda = self.data.Lambda.item()
+        self.mu = self.data.mu.item()
+        self.n = self.data.n.item()
+        self.p = self.data.p.item()
+        self.d = self.data.d.item()
+        self.train_percent = self.data.train_percent.item()
+        self.val_percent = self.data.val_percent.item()
+
+#     @property
+#     def raw_dir(self):
+#         return osp.join(self.root, self.name, 'raw')
+
+#     @property
+#     def processed_dir(self):
+#         return osp.join(self.root, self.name, 'processed')
+
+    @property
+    def raw_file_names(self):
+        file_names = [self.name]
+        return file_names
+
+    @property
