@@ -313,3 +313,17 @@ if __name__ == '__main__':
     parser.add_argument('--num_features', type = int, default = 1000)
     parser.add_argument('--avg_degree', type = float, default = 5)
     parser.add_argument('--train_percent', type = float, default = 0.025)
+    parser.add_argument('--val_percent', type = float, default = 0.025)
+
+    args = parser.parse_args()
+
+    dataset_ContextualSBM(root = args.root,
+            name = args.name,
+            theta = args.phi,
+            epsilon = args.epsilon, 
+            n = args.num_nodes,
+            d = args.avg_degree,
+            p = args.num_features,
+            train_percent = args.train_percent,
+            val_percent=args.val_percent)
+    
