@@ -264,3 +264,29 @@ class dataset_ContextualSBM(InMemoryDataset):
         return file_names
 
     @property
+    def processed_file_names(self):
+        return ['data.pt']
+
+    def download(self):
+        for name in self.raw_file_names:
+            p2f = osp.join(self.raw_dir, name)
+            if not osp.isfile(p2f):
+                # file not exist, so we create it and save it there.
+                if self._Lambda is None or self._mu is None:
+                    # auto generate the lambda and mu parameter by angle theta.
+                    self._Lambda, self._mu = parameterized_Lambda_and_mu(self._theta,
+                                                                         self._p,
+                                                                         self._n,
+                                                                         self._epsilon)
+                tmp_data = ContextualSBM(self._n,
+                                         self._d,
+                                         self._Lambda,
+                                         self._p,
+                                         self._mu,
+                                         self._train_percent,
+                                         self._val_percent)
+
+                _ = save_data_to_pickle(tmp_data,
+                                        p2root=self.raw_dir,
+                                        file_name=self.name)
+            else:
