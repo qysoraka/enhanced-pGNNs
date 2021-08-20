@@ -290,3 +290,26 @@ class dataset_ContextualSBM(InMemoryDataset):
                                         p2root=self.raw_dir,
                                         file_name=self.name)
             else:
+                # file exists already. Do nothing.
+                pass
+
+    def process(self):
+        p2f = osp.join(self.raw_dir, self.name)
+        with open(p2f, 'rb') as f:
+            data = pickle.load(f)
+        data = data if self.pre_transform is None else self.pre_transform(data)
+        torch.save(self.collate([data]), self.processed_paths[0])
+
+    def __repr__(self):
+        return '{}()'.format(self.name)
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--phi', type=float, default=1)
+    parser.add_argument('--epsilon', type = float , default = 3.25)
+    parser.add_argument('--root', default = 'data/')
+    parser.add_argument('--name', default = 'cSBM_demo')
+    parser.add_argument('--num_nodes', type = int, default = 800)
+    parser.add_argument('--num_features', type = int, default = 1000)
+    parser.add_argument('--avg_degree', type = float, default = 5)
+    parser.add_argument('--train_percent', type = float, default = 0.025)
