@@ -1,3 +1,3 @@
 #! /bin/bash
 #
-# c
+# create_cSBM_dataset.
