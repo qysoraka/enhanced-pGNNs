@@ -6,3 +6,4 @@ python cSBM_dataset.py --phi -1.0 \
     --name csbm_phi_dense_-1 \
     --root ./dataset \
     --num_nodes 5000 \
+    --num_features
