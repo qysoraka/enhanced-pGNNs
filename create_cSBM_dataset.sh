@@ -25,4 +25,4 @@ python cSBM_dataset.py --phi -0.75 \
 
 
 python cSBM_dataset.py --phi -0.5 \
-    --nam
+    --name csbm_phi_den
