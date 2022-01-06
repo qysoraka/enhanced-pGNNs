@@ -28,4 +28,6 @@ python cSBM_dataset.py --phi -0.5 \
     --name csbm_phi_dense_-0.5 \
     --root ./dataset \
     --num_nodes 5000 \
-    --num_featu
+    --num_features 2000 \
+    --avg_degree 5 \
+   
