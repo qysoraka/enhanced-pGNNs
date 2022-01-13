@@ -37,4 +37,5 @@ python cSBM_dataset.py --phi -0.5 \
 
 python cSBM_dataset.py --phi -0.25 \
     --name csbm_phi_dense_-0.25 \
-    --roo
+    --root ./dataset \
+    --num_
