@@ -45,3 +45,5 @@ python cSBM_dataset.py --phi -0.25 \
     --train_percent 0.6 \
     --val_percent 0.2
 
+
+python cSBM_dataset.py
