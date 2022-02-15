@@ -65,4 +65,7 @@ python cSBM_dataset.py --phi 0.25 \
     --avg_degree 5 \
     --epsilon 3.25 \
     --train_percent 0.6 \
-    --val_
+    --val_percent 0.2
+
+
+py
