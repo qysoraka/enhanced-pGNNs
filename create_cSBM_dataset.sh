@@ -68,4 +68,4 @@ python cSBM_dataset.py --phi 0.25 \
     --val_percent 0.2
 
 
-python cSBM
+python cSBM_dataset.py --phi
