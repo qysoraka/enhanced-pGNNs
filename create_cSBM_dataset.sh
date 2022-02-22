@@ -73,4 +73,5 @@ python cSBM_dataset.py --phi 0.5 \
     --root ./dataset \
     --num_nodes 5000 \
     --num_features 2000 \
-    --avg_d
+    --avg_degree 5 \
+    --epsil
