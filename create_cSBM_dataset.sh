@@ -80,4 +80,4 @@ python cSBM_dataset.py --phi 0.5 \
 
 
 python cSBM_dataset.py --phi 0.75 \
-  
+    --name csb
