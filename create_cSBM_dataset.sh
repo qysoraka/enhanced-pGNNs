@@ -91,4 +91,4 @@ python cSBM_dataset.py --phi 0.75 \
 
 
 python cSBM_dataset.py --phi 1.0 \
-    -
+    --name csbm_phi_dense_1 \
