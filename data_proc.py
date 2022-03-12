@@ -27,3 +27,23 @@ def generate_split(data, num_classes, seed=2021, train_num_per_c=20, val_num_per
     test_mask = ~test_mask
 
     return train_mask, val_mask, test_mask
+
+def generate_random_edges(data, random_rate=None, seed=2021):
+    np.random.seed(seed)
+    n_nodes = num_nodes.maybe_num_nodes(data.edge_index)
+    if random_rate == 0:
+        return data.edge_index
+    elif random_rate == 1:
+        num_new_edges = len(data.edge_index.T)
+        rd_edge_index_1 = np.random.randint(n_nodes-1, size=(2, num_new_edges))
+        rd_edge_index_2 = np.random.randint(n_nodes-1, size=(2, num_new_edges))
+        new_edge_index = np.concatenate([rd_edge_index_1.T, rd_edge_index_2.T])
+        new_edge_index = list(set([tuple(e_index) for e_index in new_edge_index]))
+        new_edge_index = [list(v) for v in new_edge_index]
+        new_edge_index = new_edge_index[:num_new_edges]
+        new_edge_index.sort()
+        new_edge_index = torch.LongTensor(new_edge_index)
+        return new_edge_index.T
+    else:
+        num_new_edges = int(random_rate * len(data.edge_index.T))
+        rd_edge_index = np.random.randint(n_nodes-1, size=(2, num_new_edges))
