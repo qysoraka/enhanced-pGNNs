@@ -47,3 +47,41 @@ def generate_random_edges(data, random_rate=None, seed=2021):
     else:
         num_new_edges = int(random_rate * len(data.edge_index.T))
         rd_edge_index = np.random.randint(n_nodes-1, size=(2, num_new_edges))
+        old_edge_index = data.edge_index.numpy().T
+        rm_id = np.random.choice(len(data.edge_index.T)-1, num_new_edges)
+        old_edge_index = np.delete(old_edge_index, rm_id, 0)
+
+        new_edge_index = np.concatenate([old_edge_index, rd_edge_index.T])
+        new_edge_index = list(set([tuple(e_index) for e_index in new_edge_index]))
+        new_edge_index = [list(v) for v in new_edge_index]
+        new_edge_index.sort()
+        
+        new_edge_index = torch.LongTensor(new_edge_index)
+        return new_edge_index.T
+
+def load_data(args, root='dataset', rand_seed=2021):
+    dataset = args.input
+    path = osp.join(root, dataset)
+    dataset = dataset.lower()
+
+    if 'csbm' in dataset:
+        dataset = dataset_ContextualSBM(root, 
+                                        name=dataset, 
+                                        train_percent=args.train_rate, 
+                                        val_percent=args.val_rate)
+        num_features = dataset.num_features
+        num_classes = dataset.num_classes
+        data = dataset[0]
+        return data, num_features, num_classes
+    elif dataset in ['cora', 'citeseer', 'pubmed']:
+        dataset = Planetoid(path, dataset)
+    elif dataset in ['cornell', 'texas', 'wisconsin']:
+        dataset = WebKB(path, dataset)
+    elif dataset == 'actor':
+        dataset = Actor(path)
+    elif dataset in ['chameleon', 'squirrel']:
+        dataset = WikipediaNetwork(path, dataset)
+    elif dataset in ['computers', 'photo']:
+        dataset = Amazon(path, dataset)
+    elif dataset in ['cs', 'physics']:
+        dataset = Coauthor(path, dataset)
