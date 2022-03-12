@@ -85,3 +85,13 @@ def load_data(args, root='dataset', rand_seed=2021):
         dataset = Amazon(path, dataset)
     elif dataset in ['cs', 'physics']:
         dataset = Coauthor(path, dataset)
+
+    num_features = dataset.num_features
+    num_classes = dataset.num_classes
+    data = dataset[0]
+
+    num_train = int(len(data.y) / num_classes * args.train_rate)
+    num_val = int(len(data.y) / num_classes * args.val_rate)
+    data.train_mask, data.val_mask, data.test_mask = generate_split(data, num_classes, rand_seed, num_train, num_val)
+
+    return data, num_features, num_classes
