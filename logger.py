@@ -1,4 +1,5 @@
 import torch
 
 
-class Logger(ob
+class Logger(object):
+    def __init__
