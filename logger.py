@@ -6,4 +6,4 @@ class Logger(object):
         self.info = info
         self.results = [[] for _ in range(runs)]
 
-    d
+    def add_result(
