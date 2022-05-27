@@ -6,4 +6,5 @@ class Logger(object):
         self.info = info
         self.results = [[] for _ in range(runs)]
 
-    def add_result(self, run, result
+    def add_result(self, run, result):
+        assert 
