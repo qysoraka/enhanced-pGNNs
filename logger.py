@@ -7,4 +7,5 @@ class Logger(object):
         self.results = [[] for _ in range(runs)]
 
     def add_result(self, run, result):
-        assert 
+        assert len(result) == 3
+ 
