@@ -9,4 +9,4 @@ class Logger(object):
     def add_result(self, run, result):
         assert len(result) == 3
         assert run >= 0 and run < len(self.results)
-   
+        self.results[run
