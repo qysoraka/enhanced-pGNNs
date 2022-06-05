@@ -11,4 +11,4 @@ class Logger(object):
         assert run >= 0 and run < len(self.results)
         self.results[run].append(result)
 
-    def print_statistics
+    def print_statistics(self, run=None):
