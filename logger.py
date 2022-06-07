@@ -12,4 +12,5 @@ class Logger(object):
         self.results[run].append(result)
 
     def print_statistics(self, run=None):
-        if run is n
+        if run is not None:
+            result 
