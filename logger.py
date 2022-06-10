@@ -13,4 +13,4 @@ class Logger(object):
 
     def print_statistics(self, run=None):
         if run is not None:
-            result 
+            result = 100 * torch.t
