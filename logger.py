@@ -13,4 +13,5 @@ class Logger(object):
 
     def print_statistics(self, run=None):
         if run is not None:
-            result = 100 * torch.tensor(self.results[run
+            result = 100 * torch.tensor(self.results[run])
+          
