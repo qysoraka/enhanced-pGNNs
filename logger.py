@@ -15,4 +15,5 @@ class Logger(object):
         if run is not None:
             result = 100 * torch.tensor(self.results[run])
             argmax = result[:, 1].argmax().item()
-            print(f'Run {run
+            print(f'Run {run + 1:02d}:')
+          
