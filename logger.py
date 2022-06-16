@@ -17,4 +17,4 @@ class Logger(object):
             argmax = result[:, 1].argmax().item()
             print(f'Run {run + 1:02d}:')
             print(f'Highest Train: {result[:, 0].max():.2f}')
-            print(f'Highest Valid: {re
+            print(f'Highest Valid: {result[:, 1].max():.2
