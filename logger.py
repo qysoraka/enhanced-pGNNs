@@ -16,4 +16,5 @@ class Logger(object):
             result = 100 * torch.tensor(self.results[run])
             argmax = result[:, 1].argmax().item()
             print(f'Run {run + 1:02d}:')
-            print(f'Highest Train: {result[:, 0].
+            print(f'Highest Train: {result[:, 0].max():.2f}')
+            
