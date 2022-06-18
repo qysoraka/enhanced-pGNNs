@@ -18,4 +18,4 @@ class Logger(object):
             print(f'Run {run + 1:02d}:')
             print(f'Highest Train: {result[:, 0].max():.2f}')
             print(f'Highest Valid: {result[:, 1].max():.2f}')
-            print(f'  Final Train: {resul
+            print(f'  Final Train: {result[argmax, 0]:.2f}'
