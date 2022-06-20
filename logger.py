@@ -21,4 +21,6 @@ class Logger(object):
             print(f'  Final Train: {result[argmax, 0]:.2f}')
             print(f'   Final Test: {result[argmax, 2]:.2f}')
         else:
-            result = 100 * torch.tensor(self.
+            result = 100 * torch.tensor(self.results)
+
+            
