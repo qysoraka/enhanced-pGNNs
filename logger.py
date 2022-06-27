@@ -24,4 +24,5 @@ class Logger(object):
             result = 100 * torch.tensor(self.results)
 
             best_results = []
-            for r in 
+            for r in result:
+            
