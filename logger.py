@@ -27,4 +27,4 @@ class Logger(object):
             for r in result:
                 train1 = r[:, 0].max().item()
                 valid = r[:, 1].max().item()
-                train
+                train2 = r[r[:, 1].argm
