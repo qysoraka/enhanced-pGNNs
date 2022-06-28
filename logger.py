@@ -26,4 +26,4 @@ class Logger(object):
             best_results = []
             for r in result:
                 train1 = r[:, 0].max().item()
-       
+                valid = r[:
