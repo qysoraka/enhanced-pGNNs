@@ -29,4 +29,6 @@ class Logger(object):
                 valid = r[:, 1].max().item()
                 train2 = r[r[:, 1].argmax(), 0].item()
                 test = r[r[:, 1].argmax(), 2].item()
-                best_results.append((train1, valid, train2
+                best_results.append((train1, valid, train2, test))
+
+            be
