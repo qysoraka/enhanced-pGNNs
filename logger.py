@@ -31,4 +31,4 @@ class Logger(object):
                 test = r[r[:, 1].argmax(), 2].item()
                 best_results.append((train1, valid, train2, test))
 
-            be
+            best_result = t
