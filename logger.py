@@ -32,3 +32,5 @@ class Logger(object):
                 best_results.append((train1, valid, train2, test))
 
             best_result = torch.tensor(best_results)
+
+            print(f'A
