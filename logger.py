@@ -33,4 +33,5 @@ class Logger(object):
 
             best_result = torch.tensor(best_results)
 
-            print(f'A
+            print(f'All runs:')
+   
