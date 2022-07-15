@@ -35,4 +35,4 @@ class Logger(object):
 
             print(f'All runs:')
             r = best_result[:, 0]
-            print(f'Highest Train: {r.
+            print(f'Highest Train: {r.mean():.2f} \pm {r.std
