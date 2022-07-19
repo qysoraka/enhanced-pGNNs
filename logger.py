@@ -39,4 +39,4 @@ class Logger(object):
             r = best_result[:, 1]
             print(f'Highest Valid: {r.mean():.2f} \pm {r.std():.2f}')
             r = best_result[:, 2]
-            prin
+            print(f'  Final Trai
