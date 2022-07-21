@@ -41,3 +41,4 @@ class Logger(object):
             r = best_result[:, 2]
             print(f'  Final Train: {r.mean():.2f} \pm {r.std():.2f}')
             r = best_result[:, 3]
+            print(
