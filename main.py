@@ -2,4 +2,5 @@ import torch
 import argparse
 import time
 
-from data_pr
+from data_proc import load_data
+fro
