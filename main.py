@@ -6,4 +6,4 @@ from data_proc import load_data
 from models import *
 import torch_geometric.transforms as T
 
-def build_model(args, 
+def build_model(args, num_features, num_cl
