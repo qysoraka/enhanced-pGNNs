@@ -15,4 +15,5 @@ def build_model(args, num_features, num_classes):
                             p=args.p,
                             K=args.K,
                             dropout=args.dropout)
-    elif args.model == 'ml
+    elif args.model == 'mlp':
+        mod
