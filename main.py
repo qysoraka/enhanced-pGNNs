@@ -16,4 +16,5 @@ def build_model(args, num_features, num_classes):
                             K=args.K,
                             dropout=args.dropout)
     elif args.model == 'mlp':
-        model = MLPNet(in_channels=num_features
+        model = MLPNet(in_channels=num_features,
+                   
