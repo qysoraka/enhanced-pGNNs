@@ -18,4 +18,4 @@ def build_model(args, num_features, num_classes):
     elif args.model == 'mlp':
         model = MLPNet(in_channels=num_features,
                         out_channels=num_classes,
-                       
+                        num_hid=ar
