@@ -23,4 +23,5 @@ def build_model(args, num_features, num_classes):
     elif args.model == 'gcn':
         model = GCNNet(in_channels=num_features,
                         out_channels=num_classes,
-                        num_hid=args.
+                        num_hid=args.num_hid,
+             
