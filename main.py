@@ -28,4 +28,5 @@ def build_model(args, num_features, num_classes):
     elif args.model == 'sgc':
         model = SGCNet(in_channels=num_features,
                         out_channels=num_classes,
-                        K=args.
+                        K=args.K)
+    elif args.mode
