@@ -31,4 +31,4 @@ def build_model(args, num_features, num_classes):
                         K=args.K)
     elif args.model == 'gat':
         model = GATNet(in_channels=num_features,
-              
+                        out_channels=
