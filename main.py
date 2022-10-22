@@ -36,4 +36,5 @@ def build_model(args, num_features, num_classes):
                         num_heads=args.num_heads,
                         dropout=args.dropout)
     elif args.model == 'jk':
-        model = JKNet(in_channels=num
+        model = JKNet(in_channels=num_features,
+       
