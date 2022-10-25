@@ -38,4 +38,4 @@ def build_model(args, num_features, num_classes):
     elif args.model == 'jk':
         model = JKNet(in_channels=num_features,
                         out_channels=num_classes,
-    
+                        
