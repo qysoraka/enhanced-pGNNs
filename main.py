@@ -39,4 +39,4 @@ def build_model(args, num_features, num_classes):
         model = JKNet(in_channels=num_features,
                         out_channels=num_classes,
                         num_hid=args.num_hid,
-           
+                       
