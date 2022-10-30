@@ -44,4 +44,4 @@ def build_model(args, num_features, num_classes):
                         dropout=args.dropout)
     elif args.model == 'appnp':
         model = APPNPNet(in_channels=num_features,
-                   
+                            out_channels=num_
