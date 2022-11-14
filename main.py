@@ -49,4 +49,5 @@ def build_model(args, num_features, num_classes):
                             K=args.K,
                             alpha=args.alpha,
                             dropout=args.dropout)
-    elif args.model == '
+    elif args.model == 'gprgnn':
+        model = G
