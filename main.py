@@ -50,4 +50,4 @@ def build_model(args, num_features, num_classes):
                             alpha=args.alpha,
                             dropout=args.dropout)
     elif args.model == 'gprgnn':
-        model = G
+        model = GPRGNNNet(in_channel
