@@ -52,4 +52,5 @@ def build_model(args, num_features, num_classes):
     elif args.model == 'gprgnn':
         model = GPRGNNNet(in_channels=num_features,
                             out_channels=num_classes,
-                            num_hid=args
+                            num_hid=args.num_hid,
+  
