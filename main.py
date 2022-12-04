@@ -56,4 +56,4 @@ def build_model(args, num_features, num_classes):
                             ppnp=args.ppnp,
                             K=args.K,
                             alpha=args.alpha,
-          
+                            Init
