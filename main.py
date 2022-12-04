@@ -55,4 +55,5 @@ def build_model(args, num_features, num_classes):
                             num_hid=args.num_hid,
                             ppnp=args.ppnp,
                             K=args.K,
-                            alpha=args
+                            alpha=args.alpha,
+          
