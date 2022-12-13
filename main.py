@@ -57,4 +57,5 @@ def build_model(args, num_features, num_classes):
                             K=args.K,
                             alpha=args.alpha,
                             Init=args.Init,
-                            G
+                            Gamma=args.Gamma,
+    
