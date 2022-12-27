@@ -58,4 +58,5 @@ def build_model(args, num_features, num_classes):
                             alpha=args.alpha,
                             Init=args.Init,
                             Gamma=args.Gamma,
-                            dprate=args.dprate
+                            dprate=args.dprate,
+                  
