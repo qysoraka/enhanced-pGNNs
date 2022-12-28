@@ -59,4 +59,4 @@ def build_model(args, num_features, num_classes):
                             Init=args.Init,
                             Gamma=args.Gamma,
                             dprate=args.dprate,
-                  
+                            dr
