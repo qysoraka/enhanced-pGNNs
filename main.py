@@ -60,4 +60,6 @@ def build_model(args, num_features, num_classes):
                             Gamma=args.Gamma,
                             dprate=args.dprate,
                             dropout=args.dropout)
- 
+    return model
+
+def tra
