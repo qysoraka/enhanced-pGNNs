@@ -63,4 +63,5 @@ def build_model(args, num_features, num_classes):
     return model
 
 def train(model, optimizer, data):
-    model.t
+    model.train()
+    optimizer.zero
