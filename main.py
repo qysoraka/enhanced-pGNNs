@@ -62,4 +62,5 @@ def build_model(args, num_features, num_classes):
                             dropout=args.dropout)
     return model
 
-def train(model, optimizer, da
+def train(model, optimizer, data):
+    model.t
