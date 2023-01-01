@@ -65,4 +65,4 @@ def build_model(args, num_features, num_classes):
 def train(model, optimizer, data):
     model.train()
     optimizer.zero_grad()
-    F.nll_lo
+    F.nll_loss(model(data.x, dat
