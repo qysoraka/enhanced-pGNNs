@@ -69,4 +69,5 @@ def train(model, optimizer, data):
     optimizer.step()
 
 
-@torch
+@torch.no_grad()
+def test(mo
