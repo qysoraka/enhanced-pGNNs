@@ -66,4 +66,7 @@ def train(model, optimizer, data):
     model.train()
     optimizer.zero_grad()
     F.nll_loss(model(data.x, data.edge_index, data.edge_attr)[data.train_mask], data.y[data.train_mask]).backward()
-    optimiz
+    optimizer.step()
+
+
+@torch
