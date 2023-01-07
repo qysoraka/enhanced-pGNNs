@@ -65,4 +65,4 @@ def build_model(args, num_features, num_classes):
 def train(model, optimizer, data):
     model.train()
     optimizer.zero_grad()
-    F.nll_loss(model(data.x, data.edge_index, data.edge_attr)[data.train_mask], dat
+    F.nll_loss(model(data.x, data.edge_index, data.edge_attr)[data.train_mask], data.y[data.train_mask]).b
