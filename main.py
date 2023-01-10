@@ -72,4 +72,4 @@ def train(model, optimizer, data):
 @torch.no_grad()
 def test(model, data):
     model.eval()
-    logits, 
+    logits, accs = model(da
