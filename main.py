@@ -70,4 +70,5 @@ def train(model, optimizer, data):
 
 
 @torch.no_grad()
-def test(mo
+def test(model, data):
+    model.
