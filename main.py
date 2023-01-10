@@ -71,4 +71,5 @@ def train(model, optimizer, data):
 
 @torch.no_grad()
 def test(model, data):
-    model.
+    model.eval()
+    logits, 
