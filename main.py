@@ -73,4 +73,4 @@ def train(model, optimizer, data):
 def test(model, data):
     model.eval()
     logits, accs = model(data.x, data.edge_index, data.edge_attr), []
-    for _, mask in data('train_mas
+    for _, mask in data('train_mask', 'val_mask'
