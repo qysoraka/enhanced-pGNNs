@@ -75,4 +75,4 @@ def test(model, data):
     logits, accs = model(data.x, data.edge_index, data.edge_attr), []
     for _, mask in data('train_mask', 'val_mask', 'test_mask'):
         pred = logits[mask].max(1)[1]
-        acc 
+        acc = pred.eq(data.y
