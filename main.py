@@ -77,4 +77,6 @@ def test(model, data):
         pred = logits[mask].max(1)[1]
         acc = pred.eq(data.y[mask]).sum().item() / mask.sum().item()
         accs.append(acc)
-    re
+    return accs
+
+def main(
