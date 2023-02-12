@@ -81,4 +81,4 @@ def test(model, data):
 
 def main(args):
     print(args)
-    data
+    data, num_features, num_c
