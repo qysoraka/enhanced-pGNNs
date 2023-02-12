@@ -79,4 +79,5 @@ def test(model, data):
         accs.append(acc)
     return accs
 
-def main(
+def main(args):
+    
