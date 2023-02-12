@@ -80,4 +80,5 @@ def test(model, data):
     return accs
 
 def main(args):
-    
+    print(args)
+    data
