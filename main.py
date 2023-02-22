@@ -81,4 +81,4 @@ def test(model, data):
 
 def main(args):
     print(args)
-    data, num_features, num_classes = load_da
+    data, num_features, num_classes = load_data(args, rand_s
