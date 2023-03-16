@@ -82,4 +82,5 @@ def test(model, data):
 def main(args):
     print(args)
     data, num_features, num_classes = load_data(args, rand_seed=2021)
-    device = torch.device('cuda' if torch.cuda.is_available() else 'c
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    result
