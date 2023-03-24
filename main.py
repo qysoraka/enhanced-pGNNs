@@ -85,4 +85,5 @@ def main(args):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     results = []
     for run in range(args.runs):
-        model = build_model(args, num_features,
+        model = build_model(args, num_features, num_classes)
+ 
