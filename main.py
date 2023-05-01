@@ -87,4 +87,5 @@ def main(args):
     for run in range(args.runs):
         model = build_model(args, num_features, num_classes)
         model = model.to(device)
-        data = data.to(
+        data = data.to(device)
+        optimiz
