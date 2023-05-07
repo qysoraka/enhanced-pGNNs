@@ -88,4 +88,4 @@ def main(args):
         model = build_model(args, num_features, num_classes)
         model = model.to(device)
         data = data.to(device)
-        optimizer = torch.optim.Adam(pa
+        optimizer = torch.optim.Adam(params=model.parameters(
