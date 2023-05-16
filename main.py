@@ -90,4 +90,5 @@ def main(args):
         data = data.to(device)
         optimizer = torch.optim.Adam(params=model.parameters(), lr=args.lr, weight_decay=args.weight_decay) 
         
-        t1 =
+        t1 = time.time()
+        b
