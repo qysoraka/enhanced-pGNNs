@@ -91,4 +91,5 @@ def main(args):
         optimizer = torch.optim.Adam(params=model.parameters(), lr=args.lr, weight_decay=args.weight_decay) 
         
         t1 = time.time()
-        best_val_acc = te
+        best_val_acc = test_acc = 0
+        f
