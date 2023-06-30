@@ -94,4 +94,4 @@ def main(args):
         best_val_acc = test_acc = 0
         for epoch in range(1, args.epochs+1):
             train(model, optimizer, data)
-            train_acc, val_acc, tmp_t
+            train_acc, val_acc, tmp_test_acc = te
