@@ -95,4 +95,4 @@ def main(args):
         for epoch in range(1, args.epochs+1):
             train(model, optimizer, data)
             train_acc, val_acc, tmp_test_acc = test(model, data)
-     
+            if val_acc > b
