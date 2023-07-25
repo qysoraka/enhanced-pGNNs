@@ -97,4 +97,4 @@ def main(args):
             train_acc, val_acc, tmp_test_acc = test(model, data)
             if val_acc > best_val_acc:
                 best_val_acc = val_acc
-            
+                test_acc = tmp_test_a
