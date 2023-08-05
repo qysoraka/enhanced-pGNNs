@@ -98,4 +98,4 @@ def main(args):
             if val_acc > best_val_acc:
                 best_val_acc = val_acc
                 test_acc = tmp_test_acc
-            log = 'Epoch: {:03d}, Train: {:.4f}, Val: 
+            log = 'Epoch: {:03d}, Train: {:.4f}, Val: {:.4f}, Test: {:.
