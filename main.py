@@ -99,4 +99,4 @@ def main(args):
                 best_val_acc = val_acc
                 test_acc = tmp_test_acc
             log = 'Epoch: {:03d}, Train: {:.4f}, Val: {:.4f}, Test: {:.4f}'
-            print(log.format
+            print(log.format(epoch, train_acc, best_
