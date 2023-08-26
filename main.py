@@ -100,4 +100,5 @@ def main(args):
                 test_acc = tmp_test_acc
             log = 'Epoch: {:03d}, Train: {:.4f}, Val: {:.4f}, Test: {:.4f}'
             print(log.format(epoch, train_acc, best_val_acc, test_acc))
-     
+        t2 = time.time()
+ 
