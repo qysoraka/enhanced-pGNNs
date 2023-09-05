@@ -101,4 +101,4 @@ def main(args):
             log = 'Epoch: {:03d}, Train: {:.4f}, Val: {:.4f}, Test: {:.4f}'
             print(log.format(epoch, train_acc, best_val_acc, test_acc))
         t2 = time.time()
-        # print('{}, {}, Accuacy: {:.4f}, Time: {:.
+        # print('{}, {}, Accuacy: {:.4f}, Time: {:.4f}'.format(a
