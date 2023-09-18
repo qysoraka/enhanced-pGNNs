@@ -103,4 +103,5 @@ def main(args):
         t2 = time.time()
         # print('{}, {}, Accuacy: {:.4f}, Time: {:.4f}'.format(args.model, args.input, test_acc, t2-t1))
         results.append(test_acc)
-    results = 100 * torch.Tenso
+    results = 100 * torch.Tensor(results)
+    print(resu
