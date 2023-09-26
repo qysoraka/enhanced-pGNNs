@@ -105,4 +105,6 @@ def main(args):
         results.append(test_acc)
     results = 100 * torch.Tensor(results)
     print(results)
-    print(f'Averaged test accuracy for {args.runs} runs: {results.mean():.2f} \pm {results.std():.2f}
+    print(f'Averaged test accuracy for {args.runs} runs: {results.mean():.2f} \pm {results.std():.2f}')
+
+def get_
