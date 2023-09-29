@@ -108,4 +108,5 @@ def main(args):
     print(f'Averaged test accuracy for {args.runs} runs: {results.mean():.2f} \pm {results.std():.2f}')
 
 def get_args():
-    parser = argparse.ArgumentP
+    parser = argparse.ArgumentParser()
+    pars
