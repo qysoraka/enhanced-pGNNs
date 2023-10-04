@@ -113,4 +113,4 @@ def get_args():
                         type=str, 
                         default='cora',                    
                         help='Input graph.')
-    parse
+    parser.add_argument(
