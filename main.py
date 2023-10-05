@@ -113,4 +113,4 @@ def get_args():
                         type=str, 
                         default='cora',                    
                         help='Input graph.')
-    parser.add_argument(
+    parser.add_argument('--train_rate', 
