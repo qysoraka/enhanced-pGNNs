@@ -115,4 +115,4 @@ def get_args():
                         help='Input graph.')
     parser.add_argument('--train_rate', 
                         type=float, 
-                   
+                        default=0.02
