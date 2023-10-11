@@ -117,4 +117,4 @@ def get_args():
                         type=float, 
                         default=0.025,
                         help='Training rate.')
-    parse
+    parser.add_argument('--va
