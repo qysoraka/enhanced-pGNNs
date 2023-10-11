@@ -116,4 +116,5 @@ def get_args():
     parser.add_argument('--train_rate', 
                         type=float, 
                         default=0.025,
-                        help='Traini
+                        help='Training rate.')
+    parse
