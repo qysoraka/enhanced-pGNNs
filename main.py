@@ -119,4 +119,4 @@ def get_args():
                         help='Training rate.')
     parser.add_argument('--val_rate', 
                         type=float, 
-             
+                        d
