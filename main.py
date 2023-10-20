@@ -120,4 +120,5 @@ def get_args():
     parser.add_argument('--val_rate', 
                         type=float, 
                         default=0.025,
-                        help='Validat
+                        help='Validation rate.')
+    
