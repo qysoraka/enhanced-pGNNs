@@ -122,4 +122,5 @@ def get_args():
                         default=0.025,
                         help='Validation rate.')
     parser.add_argument('--model',
-                     
+                        type=str,
+       
