@@ -124,4 +124,4 @@ def get_args():
     parser.add_argument('--model',
                         type=str,
                         default='pgnn',
-                        choices=['pgnn', 'mlp', 'gcn', 'cheb', 'sgc', 'gat', 'jk', 'app
+                        choices=['pgnn', 'mlp', 'gcn', 'cheb', 'sgc', 'gat', 'jk', 'appnp', 'gprgnn'],
