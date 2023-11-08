@@ -126,4 +126,4 @@ def get_args():
                         default='pgnn',
                         choices=['pgnn', 'mlp', 'gcn', 'cheb', 'sgc', 'gat', 'jk', 'appnp', 'gprgnn'],
                         help='GNN model')
-    parser.
+    parser.add_argument('--runs',
