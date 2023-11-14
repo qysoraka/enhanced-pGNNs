@@ -132,4 +132,4 @@ def get_args():
                         help='Number of repeating experiments.')
     parser.add_argument('--epochs', 
                         type=int, 
-       
+                        default=1000,
