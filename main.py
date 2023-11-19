@@ -133,4 +133,5 @@ def get_args():
     parser.add_argument('--epochs', 
                         type=int, 
                         default=1000,
-                        help='Number of
+                        help='Number of epochs to train.')
+  
