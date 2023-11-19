@@ -135,4 +135,5 @@ def get_args():
                         default=1000,
                         help='Number of epochs to train.')
     parser.add_argument('--lr', 
-                        
+                        type=float, 
+    
