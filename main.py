@@ -134,4 +134,5 @@ def get_args():
                         type=int, 
                         default=1000,
                         help='Number of epochs to train.')
-    parser.add_argument('--
+    parser.add_argument('--lr', 
+            
