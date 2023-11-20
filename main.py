@@ -138,4 +138,4 @@ def get_args():
                         type=float, 
                         default=0.01,
                         help='Initial learning rate.')
-    parser.a
+    parser.add_argument('--weig
