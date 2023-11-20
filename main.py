@@ -137,4 +137,5 @@ def get_args():
     parser.add_argument('--lr', 
                         type=float, 
                         default=0.01,
-                        help='Initial lear
+                        help='Initial learning rate.')
+    parser.a
