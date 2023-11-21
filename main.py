@@ -139,4 +139,4 @@ def get_args():
                         default=0.01,
                         help='Initial learning rate.')
     parser.add_argument('--weight_decay', 
-                  
+                        type=floa
