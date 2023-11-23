@@ -141,4 +141,4 @@ def get_args():
     parser.add_argument('--weight_decay', 
                         type=float, 
                         default=5e-4,
-                        help='Weight decay (L
+                        help='Weight decay (L2 loss on paramete
