@@ -142,4 +142,4 @@ def get_args():
                         type=float, 
                         default=5e-4,
                         help='Weight decay (L2 loss on parameters).')
-    parser.add_arg
+    parser.add_argument('--num_hid',
