@@ -147,4 +147,4 @@ def get_args():
                         default=16,
                         help='Number of hidden units.')
     parser.add_argument('--dropout', 
-              
+                        type=float,
