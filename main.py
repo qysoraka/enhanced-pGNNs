@@ -149,4 +149,5 @@ def get_args():
     parser.add_argument('--dropout', 
                         type=float, 
                         default=0.5,
-                        help='Dropout rate (1 - keep probabi
+                        help='Dropout rate (1 - keep probability).')
+    parse
