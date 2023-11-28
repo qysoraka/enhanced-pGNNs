@@ -150,4 +150,4 @@ def get_args():
                         type=float, 
                         default=0.5,
                         help='Dropout rate (1 - keep probability).')
-    parse
+    parser.add_argument('--mu'
