@@ -155,4 +155,5 @@ def get_args():
                         default=0.1,
                         help='mu.')
     parser.add_argument('--p', 
-                   
+                        type=float, 
+     
