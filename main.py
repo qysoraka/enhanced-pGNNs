@@ -160,4 +160,5 @@ def get_args():
                         help='p.')
     parser.add_argument('--K', 
                         type=int, 
-                        
+                        default=2,
+         
