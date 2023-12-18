@@ -163,4 +163,5 @@ def get_args():
                         default=2,
                         help='K.')
     parser.add_argument('--num_heads', 
-              
+                        type=int, 
+ 
