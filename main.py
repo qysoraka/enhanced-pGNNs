@@ -165,4 +165,5 @@ def get_args():
     parser.add_argument('--num_heads', 
                         type=int, 
                         default=8,
-                        help='Number of h
+                        help='Number of heads.')
+    parse
