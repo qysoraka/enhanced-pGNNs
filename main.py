@@ -166,4 +166,4 @@ def get_args():
                         type=int, 
                         default=8,
                         help='Number of heads.')
-    parse
+    parser.add_argument('--alpha'
