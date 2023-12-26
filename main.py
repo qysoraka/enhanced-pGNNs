@@ -167,4 +167,5 @@ def get_args():
                         default=8,
                         help='Number of heads.')
     parser.add_argument('--alpha', 
-                       
+                        type=float, 
+      
