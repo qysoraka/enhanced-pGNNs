@@ -169,4 +169,5 @@ def get_args():
     parser.add_argument('--alpha', 
                         type=float, 
                         default=0.0,
-                        he
+                        help='alpha.')
+    
