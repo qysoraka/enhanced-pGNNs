@@ -173,4 +173,4 @@ def get_args():
     parser.add_argument('--Init', 
                         type=str, 
                         default='PPR',
-                        choices=['SGC', 'PP
+                        choices=['SGC', 'PPR', 'NPPR', 'Random', 'WS
