@@ -174,4 +174,4 @@ def get_args():
                         type=str, 
                         default='PPR',
                         choices=['SGC', 'PPR', 'NPPR', 'Random', 'WS', 'Null'])
-    parser.add_a
+    parser.add_argument('--Gamma', 
