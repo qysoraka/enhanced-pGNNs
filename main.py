@@ -184,4 +184,6 @@ def get_args():
                         type=float,
                         default=0.5)
 
-    args = parser.
+    args = parser.parse_args()
+
+    re
