@@ -181,4 +181,5 @@ def get_args():
                         default='GPR_prop',
                         choices=['PPNP', 'GPR_prop'])
     parser.add_argument('--dprate',
-                 
+                        type=float,
+    
