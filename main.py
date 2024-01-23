@@ -188,4 +188,4 @@ def get_args():
 
     return args
 
-if 
+if __name__ == '__main__':
