@@ -189,3 +189,4 @@ def get_args():
     return args
 
 if __name__ == '__main__':
+    main(get_args())
