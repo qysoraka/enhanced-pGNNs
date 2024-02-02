@@ -17,3 +17,22 @@ class pGNNNet(torch.nn.Module):
                  dropout=0.5,
                  cached=True):
         super(pGNNNet, self).__init__()
+        self.dropout = dropout
+        self.lin1 = torch.nn.Linear(in_channels, num_hid)
+        self.conv1 = pGNNConv(num_hid, out_channels, mu, p, K, cached=cached)
+
+    def forward(self, x, edge_index, edge_weight=None):
+        x = F.relu(self.lin1(x))
+        x = F.dropout(x, p=self.dropout, training=self.training)
+        x = self.conv1(x, edge_index, edge_weight)        
+        return F.log_softmax(x, dim=1)
+
+
+class MLPNet(torch.nn.Module):
+    def __init__(self, 
+                 in_channels, 
+                 out_channels, 
+                 num_hid=16,
+                 dropout=0.5):
+        super(MLPNet, self).__init__()
+        self.dropout = dropout
