@@ -80,3 +80,26 @@ class GCN_Encoder(torch.nn.Module):
 
 
 class SGCNet(torch.nn.Module):
+    def __init__(self,
+                 in_channels,
+                 out_channels,
+                 K=2,
+                 cached=True):
+        super(SGCNet, self).__init__()
+        self.conv1 = SGConv(in_channels, out_channels, K=K, cached=cached)
+
+    def forward(self, x, edge_index, edge_weight=None):
+        x = self.conv1(x, edge_index, edge_weight)
+        return F.log_softmax(x, dim=1)
+
+
+class GATNet(torch.nn.Module):
+    def __init__(self, 
+                 in_channels, 
+                 out_channels, 
+                 num_hid=8,
+                 num_heads=8,
+                 dropout=0.6,
+                 concat=False):
+
+        super(GATNet, self).__init__()
