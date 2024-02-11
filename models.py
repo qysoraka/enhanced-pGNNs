@@ -54,3 +54,29 @@ class GCNNet(torch.nn.Module):
                  dropout=0.5,
                  cached=True):
         super(GCNNet, self).__init__()
+        self.dropout = dropout
+        self.conv1 = GCNConv(in_channels, num_hid, cached=cached)
+        self.conv2 = GCNConv(num_hid, out_channels, cached=cached)
+
+    def forward(self, x, edge_index, edge_weight):
+        x = F.relu(self.conv1(x, edge_index, edge_weight))
+        x = F.dropout(x, p=self.dropout, training=self.training)
+        x = self.conv2(x, edge_index, edge_weight)
+        return F.log_softmax(x, dim=1)
+
+
+class GCN_Encoder(torch.nn.Module):
+    def __init__(self,
+                 in_channels,
+                 num_hid=16):
+        super(GCN_Encoder, self).__init__()
+        self.conv = GCNConv(in_channels, num_hid, cached=True)
+        self.prelu = torch.nn.PReLU(num_hid)
+
+    def forward(self, x, edge_index, edge_weight=None):
+        x = self.conv(x, edge_index, edge_weight)
+        x = self.prelu(x)
+        return x
+
+
+class SGCNet(torch.nn.Module):
