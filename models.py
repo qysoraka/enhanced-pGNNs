@@ -103,3 +103,22 @@ class GATNet(torch.nn.Module):
                  concat=False):
 
         super(GATNet, self).__init__()
+        self.dropout = dropout
+        self.conv1 = GATConv(in_channels, num_hid, heads=num_heads, dropout=dropout)
+        self.conv2 = GATConv(num_heads * num_hid, out_channels, heads=1, concat=concat, dropout=dropout)
+
+    def forward(self, x, edge_index, edge_weight=None):
+        x = F.dropout(x, p=self.dropout, training=self.training)
+        x = F.elu(self.conv1(x, edge_index, edge_weight))
+        x = F.dropout(x, p=self.dropout, training=self.training)
+        x = self.conv2(x, edge_index, edge_weight)
+        return F.log_softmax(x, dim=-1)
+
+
+class JKNet(torch.nn.Module):
+    def __init__(self, 
+                 in_channels,
+                 out_channels,
+                 num_hid=16,
+                 K=1,
+                 alpha=0,
