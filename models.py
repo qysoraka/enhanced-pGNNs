@@ -197,3 +197,17 @@ class GPRGNNNet(torch.nn.Module):
 
     def reset_parameters(self):
         self.prop1.reset_parameters()
+
+    def forward(self, x, edge_index, edge_weight=None):
+        x = F.dropout(x, p=self.dropout, training=self.training)
+        x = F.relu(self.lin1(x))
+        x = F.dropout(x, p=self.dropout, training=self.training)
+        x = self.lin2(x)
+
+        if self.dprate == 0.0:
+            x = self.prop1(x, edge_index, edge_weight)
+            return F.log_softmax(x, dim=1)
+        else:
+            x = F.dropout(x, p=self.dprate, training=self.training)
+            x = self.prop1(x, edge_index, edge_weight)
+            return F.log_softmax(x, dim=1)
