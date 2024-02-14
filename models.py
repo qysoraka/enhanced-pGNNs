@@ -152,3 +152,20 @@ class APPNPNet(torch.nn.Module):
                  in_channels, 
                  out_channels,
                  num_hid=16,
+                 K=1,
+                 alpha=0.1,
+                 dropout=0.5):
+        super(APPNPNet, self).__init__()
+        self.lin1 = torch.nn.Linear(in_channels, num_hid)
+        self.lin2 = torch.nn.Linear(num_hid, out_channels)
+        self.prop1 = APPNP(K, alpha)
+        self.dropout = dropout
+
+    def forward(self, x, edge_index, edge_weight=None):
+        x = F.dropout(x, p=self.dropout, training=self.training)
+        x = F.relu(self.lin1(x))
+        x = F.dropout(x, p=self.dropout, training=self.training)
+        x = self.lin2(x)
+        x = self.prop1(x, edge_index, edge_weight)
+        return F.log_softmax(x, dim=1)
+
