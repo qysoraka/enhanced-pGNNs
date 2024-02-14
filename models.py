@@ -139,3 +139,16 @@ class JKNet(torch.nn.Module):
         x1 = F.dropout(x1, p=0.5, training=self.training)
 
         x2 = F.relu(self.conv2(x1, edge_index, edge_weight))
+        x2 = F.dropout(x2, p=self.dropout, training=self.training)
+
+        x = self.JK([x1, x2])
+        x = self.one_step(x, edge_index, edge_weight)
+        x = self.lin1(x)
+        return F.log_softmax(x, dim=1)
+
+
+class APPNPNet(torch.nn.Module):
+    def __init__(self,
+                 in_channels, 
+                 out_channels,
+                 num_hid=16,
