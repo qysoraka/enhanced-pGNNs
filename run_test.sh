@@ -1,3 +1,4 @@
 #!/bin/bash
 
-function run_e
+function run_exp(){
+    
