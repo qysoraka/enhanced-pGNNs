@@ -1,4 +1,5 @@
 #!/bin/bash
 
 function run_exp(){
-    python main.p
+    python main.py --input $1 \
+       
