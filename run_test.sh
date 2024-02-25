@@ -6,4 +6,4 @@ function run_exp(){
                         --val_rate $3 \
                         --model $4 \
                         --num_hid $5 \
-       
+                        
