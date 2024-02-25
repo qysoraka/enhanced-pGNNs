@@ -5,4 +5,5 @@ function run_exp(){
                         --train_rate $2 \
                         --val_rate $3 \
                         --model $4 \
-                        --num_
+                        --num_hid $5 \
+       
