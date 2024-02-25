@@ -7,4 +7,4 @@ function run_exp(){
                         --model $4 \
                         --num_hid $5 \
                         --lr $6 \
-          
+                       
