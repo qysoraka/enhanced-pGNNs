@@ -8,4 +8,5 @@ function run_exp(){
                         --num_hid $5 \
                         --lr $6 \
                         --epochs $7 \
-                        --weight_deca
+                        --weight_decay $8 \
+         
