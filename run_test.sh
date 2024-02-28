@@ -9,4 +9,4 @@ function run_exp(){
                         --lr $6 \
                         --epochs $7 \
                         --weight_decay $8 \
-         
+                     
