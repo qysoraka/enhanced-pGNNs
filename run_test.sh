@@ -11,4 +11,4 @@ function run_exp(){
                         --weight_decay $8 \
                         --dropout $9 \
                         --mu ${10} \
-           
+                        -
