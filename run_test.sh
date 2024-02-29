@@ -10,4 +10,4 @@ function run_exp(){
                         --epochs $7 \
                         --weight_decay $8 \
                         --dropout $9 \
-           
+                        --m
