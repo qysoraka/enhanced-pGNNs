@@ -12,4 +12,4 @@ function run_exp(){
                         --dropout $9 \
                         --mu ${10} \
                         --p ${11} \
-                  
+                        --K ${12} \
