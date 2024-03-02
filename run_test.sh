@@ -15,4 +15,7 @@ function run_exp(){
                         --K ${12} \
                         --alpha ${13} \
                         --dprate ${14} \
-                  
+                        --runs ${15}
+}
+
+r
