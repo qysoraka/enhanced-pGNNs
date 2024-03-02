@@ -18,4 +18,4 @@ function run_exp(){
                         --runs ${15}
 }
 
-r
+run_exp cora 0.
