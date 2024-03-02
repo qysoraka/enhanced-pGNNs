@@ -13,4 +13,5 @@ function run_exp(){
                         --mu ${10} \
                         --p ${11} \
                         --K ${12} \
-                        --alp
+                        --alpha ${13} \
+    
