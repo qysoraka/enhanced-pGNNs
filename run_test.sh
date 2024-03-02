@@ -14,4 +14,4 @@ function run_exp(){
                         --p ${11} \
                         --K ${12} \
                         --alpha ${13} \
-    
+                 
