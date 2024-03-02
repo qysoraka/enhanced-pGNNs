@@ -18,4 +18,4 @@ function run_exp(){
                         --runs ${15}
 }
 
-run_exp cora 0.
+run_exp cora 0.025 0.025 pgnn 
