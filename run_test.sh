@@ -19,4 +19,4 @@ function run_exp(){
 }
 
 run_exp cora 0.025 0.025 pgnn 16 0.01 1000 5e-4 0.5 0.1 1 4 0.1 0.5 10
-run_exp cora 0.025 0.025 pgnn 16 0.01 1000 5
+run_exp cora 0.025 0.025 pgnn 16 0.01 1000 5e-4 0.5 0.1 1.5
