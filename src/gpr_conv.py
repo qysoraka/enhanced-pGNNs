@@ -11,3 +11,21 @@ from torch_scatter import scatter_add
 from torch_sparse import SparseTensor, matmul, fill_diag, sum, mul
 
 from torch_geometric.nn import MessagePassing
+from torch_geometric.nn.conv.gcn_conv import gcn_norm
+
+
+class GPR_prop(MessagePassing):
+    '''
+    propagation class for GPR_GNN
+    '''
+
+    def __init__(self, K, alpha, Init, Gamma=None, bias=True, **kwargs):
+        super(GPR_prop, self).__init__(aggr='add', **kwargs)
+        self.K = K
+        self.Init = Init
+        self.alpha = alpha
+
+        assert Init in ['SGC', 'PPR', 'NPPR', 'Random', 'WS']
+        if Init == 'SGC':
+            # SGC-like
+            TEMP = 0.0*np.ones(K+1)
