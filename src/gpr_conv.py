@@ -29,3 +29,25 @@ class GPR_prop(MessagePassing):
         if Init == 'SGC':
             # SGC-like
             TEMP = 0.0*np.ones(K+1)
+            TEMP[alpha] = 1.0
+        elif Init == 'PPR':
+            # PPR-like
+            TEMP = alpha*(1-alpha)**np.arange(K+1)
+            TEMP[-1] = (1-alpha)**K
+        elif Init == 'NPPR':
+            # Negative PPR
+            TEMP = (alpha)**np.arange(K+1)
+            TEMP = TEMP/np.sum(np.abs(TEMP))
+        elif Init == 'Random':
+            # Random
+            bound = np.sqrt(3/(K+1))
+            TEMP = np.random.uniform(-bound, bound, K+1)
+            TEMP = TEMP/np.sum(np.abs(TEMP))
+        elif Init == 'WS':
+            # Specify Gamma
+            TEMP = Gamma
+
+        self.temp = Parameter(torch.tensor(TEMP))
+
+    def reset_parameters(self):
+        torch.nn.init.zeros_(self.temp)
