@@ -80,3 +80,25 @@ def calc_M(f, edge_index, edge_weight, deg_inv_sqrt, num_nodes, mu, p):
 
         ## calculate M
         graph_grad = torch.pow(edge_weight, 0.5).view(-1, 1) * (deg_inv_sqrt[row].view(-1, 1) * f[row] - deg_inv_sqrt[col].view(-1, 1) * f[col])
+        graph_grad = torch.pow(torch.norm(graph_grad, dim=1), p-2)
+        M = edge_weight * graph_grad
+        M.masked_fill_(M == float('inf'), 0)
+        alpha = (deg_inv_sqrt.pow(2) * scatter_add(M, col, dim=0, dim_size=num_nodes) + (2*mu)/p).pow(-1)
+        beta = 4*mu / p * alpha
+        M_ = alpha[row] * deg_inv_sqrt[row] * M * deg_inv_sqrt[col]
+        return M_, beta
+
+
+class pGNNConv(MessagePassing):
+    _cached_edge_index: Optional[Tuple[Tensor, Tensor, Tensor]]
+    _cached_adj_t: Optional[Tuple[SparseTensor, Tensor]]
+
+    def __init__(self, 
+                 in_channels: int, 
+                 out_channels: int,
+                 mu: float,
+                 p: float,
+                 K: int,
+                 improved: bool = False, 
+                 cached: bool = False,
+                 add_self_loops: bool = False, 
