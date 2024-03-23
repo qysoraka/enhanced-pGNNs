@@ -102,3 +102,27 @@ class pGNNConv(MessagePassing):
                  improved: bool = False, 
                  cached: bool = False,
                  add_self_loops: bool = False, 
+                 normalize: bool = True,
+                 bias: bool = True, 
+                 return_M_: bool = False,
+                 **kwargs):
+
+        kwargs.setdefault('aggr', 'add')
+        super(pGNNConv, self).__init__(**kwargs)
+
+        self.in_channels = in_channels
+        self.out_channels = out_channels
+        self.mu = mu
+        self.p = p
+        self.K = K
+        self.improved = improved
+        self.cached = cached
+        self.add_self_loops = add_self_loops
+        self.normalize = normalize
+
+        self._cached_edge_index = None
+        self._cached_adj_t = None
+
+        self.return_M_ = return_M_
+
+        self.lin1 = torch.nn.Linear(in_channels, out_channels, bias=bias)
