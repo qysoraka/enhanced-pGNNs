@@ -62,3 +62,21 @@ def pgnn_norm(edge_index, edge_weight=None, num_nodes=None, improved=False,
             edge_index, tmp_edge_weight = add_remaining_self_loops(
                 edge_index, edge_weight, fill_value, num_nodes)
             assert tmp_edge_weight is not None
+            edge_weight = tmp_edge_weight
+
+        row, col = edge_index[0], edge_index[1]
+        deg = scatter_add(edge_weight, col, dim=0, dim_size=num_nodes)
+        deg_inv_sqrt = deg.pow(-0.5)
+        deg_inv_sqrt.masked_fill_(deg_inv_sqrt == float('inf'), 0)
+
+        return edge_index, edge_weight, deg_inv_sqrt
+
+
+def calc_M(f, edge_index, edge_weight, deg_inv_sqrt, num_nodes, mu, p):
+        if isinstance(edge_index, SparseTensor):
+            row, col, edge_weight = edge_index.coo()
+        else:
+            row, col = edge_index[0], edge_index[1]
+
+        ## calculate M
+        graph_grad = torch.pow(edge_weight, 0.5).view(-1, 1) * (deg_inv_sqrt[row].view(-1, 1) * f[row] - deg_inv_sqrt[col].view(-1, 1) * f[col])
