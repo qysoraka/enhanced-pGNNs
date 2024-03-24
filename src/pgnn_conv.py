@@ -126,3 +126,24 @@ class pGNNConv(MessagePassing):
         self.return_M_ = return_M_
 
         self.lin1 = torch.nn.Linear(in_channels, out_channels, bias=bias)
+
+        if return_M_:
+            self.new_edge_attr = None
+
+        self.reset_parameters()
+
+    def reset_parameters(self):
+        self.lin1.reset_parameters()
+        self._cached_edge_index = None
+        self._cached_adj_t = None
+
+    
+
+    def forward(self, x: Tensor, edge_index: Adj,
+                edge_weight: OptTensor = None) -> Tensor:
+        """"""
+        num_nodes = x.size(self.node_dim)
+        
+        if self.normalize:
+            if isinstance(edge_index, Tensor):
+                cache = self._cached_edge_index
