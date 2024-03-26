@@ -147,3 +147,24 @@ class pGNNConv(MessagePassing):
         if self.normalize:
             if isinstance(edge_index, Tensor):
                 cache = self._cached_edge_index
+                if cache is None:
+                    edge_index, edge_weight, deg_inv_sqrt = pgnn_norm(  # yapf: disable
+                        edge_index, edge_weight, num_nodes,
+                        self.improved, self.add_self_loops)
+                    if self.cached:
+                        self._cached_edge_index = (edge_index, edge_weight, deg_inv_sqrt)
+                else:
+                    edge_index, edge_weight, deg_inv_sqrt = cache[0], cache[1], cache[2]
+            elif isinstance(edge_index, SparseTensor):
+                cache = self._cached_adj_t
+                if cache is None:
+                    edge_index, deg_inv_sqrt = pgnn_norm(  # yapf: disable
+                        edge_index, edge_weight, num_nodes,
+                        self.improved, self.add_self_loops)
+                    if self.cached:
+                        self._cached_adj_t = (edge_index, deg_inv_sqrt)
+                else:
+                    edge_index, deg_inv_sqrt = cache[0], cache[1]
+
+        out = x
+        for _ in range(self.K):
