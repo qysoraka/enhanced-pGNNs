@@ -168,3 +168,21 @@ class pGNNConv(MessagePassing):
 
         out = x
         for _ in range(self.K):
+            edge_attr, beta = calc_M(out, edge_index, edge_weight, deg_inv_sqrt, num_nodes, self.mu, self.p)
+            out = self.propagate(edge_index, x=out, edge_weight=edge_attr, size=None) + beta.view(-1, 1) * x
+            
+        out = self.lin1(out)
+
+        if self.return_M_:
+            self.new_edge_attr = edge_attr
+            
+        return out
+
+    def message(self, x_j: Tensor, edge_weight: OptTensor) -> Tensor:
+        return x_j if edge_weight is None else edge_weight.view(-1, 1) * x_j
+
+    def message_and_aggregate(self, adj_t: SparseTensor, x: Tensor) -> Tensor:
+        return matmul(adj_t, x, reduce=self.aggr)
+
+    def __repr__(self):
+        return '{}({}, {})'.format(self.__class__.__name__, self.in_channels,
