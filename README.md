@@ -4,4 +4,4 @@ This repository provides a refined version of pGNN as described in the ICML'2022
 ### Requirements
 The following packages are required: 
 
--
+- [pytorch 1.9.0](h
