@@ -5,4 +5,4 @@ This repository provides a refined version of pGNN as described in the ICML'2022
 The following packages are required: 
 
 - [pytorch 1.9.0](https://pytorch.org/get-started/locally/)
-- [torch_geometri
+- [torch_geometric 1.7.1](https://gith
