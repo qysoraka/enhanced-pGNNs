@@ -10,4 +10,6 @@ The following packages are required:
 - networkx 2.5.1
 
 ### Basic Usage
-Run the following 
+Run the following command:
+```
+$ py
