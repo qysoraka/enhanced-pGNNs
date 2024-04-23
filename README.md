@@ -7,4 +7,6 @@ The following packages are required:
 - [pytorch 1.9.0](https://pytorch.org/get-started/locally/)
 - [torch_geometric 1.7.1](https://github.com/pyg-team/pytorch_geometric)
 - scikit-learn 0.24.2
-- ne
+- networkx 2.5.1
+
+#
