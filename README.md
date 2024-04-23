@@ -12,4 +12,4 @@ The following packages are required:
 ### Basic Usage
 Run the following command:
 ```
-$ py
+$ python main.py --input
