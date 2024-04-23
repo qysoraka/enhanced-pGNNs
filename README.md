@@ -12,4 +12,4 @@ The following packages are required:
 ### Basic Usage
 Run the following command:
 ```
-$ python main.py --input cora --train_rate 0.025 --val_rate
+$ python main.py --input cora --train_rate 0.025 --val_rate 0.025 --model pgnn --mu
