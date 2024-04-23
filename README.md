@@ -12,4 +12,4 @@ The following packages are required:
 ### Basic Usage
 Run the following command:
 ```
-$ python main.py --input
+$ python main.py --input cora --train_
