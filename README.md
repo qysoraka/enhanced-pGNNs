@@ -10,4 +10,4 @@ The following packages are required:
 - networkx 2.5.1
 
 ### Basic Usage
-Run
+Run the following 
