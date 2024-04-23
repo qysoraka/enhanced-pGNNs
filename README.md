@@ -9,4 +9,5 @@ The following packages are required:
 - scikit-learn 0.24.2
 - networkx 2.5.1
 
-#
+### Basic Usage
+Run
