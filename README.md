@@ -16,4 +16,6 @@ $ python main.py --input cora --train_rate 0.025 --val_rate 0.025 --model pgnn -
 ```
 
 ### Testing Examples
-Run the following
+Run the following command:
+```
+$ b
