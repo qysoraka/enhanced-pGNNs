@@ -19,3 +19,6 @@ $ python main.py --input cora --train_rate 0.025 --val_rate 0.025 --model pgnn -
 Run the following command:
 ```
 $ bash run_test.sh
+```
+
+### Ci
