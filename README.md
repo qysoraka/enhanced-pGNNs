@@ -22,4 +22,4 @@ $ bash run_test.sh
 ```
 
 ### Citing
-If you find
+If you find the pGNN mode
