@@ -22,4 +22,4 @@ $ bash run_test.sh
 ```
 
 ### Citing
-If you find the pGNN mode
+If you find the pGNN model useful in your 
