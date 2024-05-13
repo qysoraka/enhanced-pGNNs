@@ -22,4 +22,4 @@ $ bash run_test.sh
 ```
 
 ### Citing
-If you find the pGNN model useful in your research, please consider citing the
+If you find the pGNN model useful in your research, please consider citing the original paper:
