@@ -25,4 +25,4 @@ $ bash run_test.sh
 If you find the pGNN model useful in your research, please consider citing the original paper:
 ```
 @inproceedings{DBLP:conf/icml/FuZB22,
-  author    
+  author    = {Guoji Fu and
