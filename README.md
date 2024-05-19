@@ -26,4 +26,4 @@ If you find the pGNN model useful in your research, please consider citing the o
 ```
 @inproceedings{DBLP:conf/icml/FuZB22,
   author    = {Guoji Fu and
-             
+               Peilin Zhao and
