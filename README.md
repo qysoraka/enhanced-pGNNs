@@ -28,4 +28,5 @@ If you find the pGNN model useful in your research, please consider citing the o
   author    = {Guoji Fu and
                Peilin Zhao and
                Yatao Bian},
-  title     = {p-Laplacian Based Graph Neural Networks}
+  title     = {p-Laplacian Based Graph Neural Networks},
+  booktitle = {Inte
