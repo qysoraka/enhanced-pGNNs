@@ -30,4 +30,5 @@ If you find the pGNN model useful in your research, please consider citing the o
                Yatao Bian},
   title     = {p-Laplacian Based Graph Neural Networks},
   booktitle = {International Conference on Machine Learning, {ICML} 2022, 17-23 July
-               2022, Baltimore, Maryland
+               2022, Baltimore, Maryland, {USA}},
+  series   
