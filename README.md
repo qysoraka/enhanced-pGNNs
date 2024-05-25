@@ -32,4 +32,5 @@ If you find the pGNN model useful in your research, please consider citing the o
   booktitle = {International Conference on Machine Learning, {ICML} 2022, 17-23 July
                2022, Baltimore, Maryland, {USA}},
   series    = {Proceedings of Machine Learning Research},
-  volume    =
+  volume    = {162},
+  pages     =
