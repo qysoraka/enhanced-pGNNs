@@ -33,4 +33,5 @@ If you find the pGNN model useful in your research, please consider citing the o
                2022, Baltimore, Maryland, {USA}},
   series    = {Proceedings of Machine Learning Research},
   volume    = {162},
-  pages     = {6878--6917}
+  pages     = {6878--6917},
+  publisher = {{P
