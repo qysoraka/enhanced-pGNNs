@@ -35,4 +35,5 @@ If you find the pGNN model useful in your research, please consider citing the o
   volume    = {162},
   pages     = {6878--6917},
   publisher = {{PMLR}},
-  year      
+  year      = {2022},
+  url     
