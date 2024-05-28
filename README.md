@@ -36,4 +36,4 @@ If you find the pGNN model useful in your research, please consider citing the o
   pages     = {6878--6917},
   publisher = {{PMLR}},
   year      = {2022},
-  url       = {https://proce
+  url       = {https://proceedings.mlr.press/v1
